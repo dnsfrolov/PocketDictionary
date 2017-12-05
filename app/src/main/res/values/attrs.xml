@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<item name="toolbar" type="id" />
+
+	<declare-styleable name="Toolbar">
+		<attr name="android:title" />
+		<attr name="icon_start" format="reference" />
+		<attr name="icon_first_end" format="reference" />
+		<attr name="icon_second_end" format="reference" />
+		<attr name="title_position" format="string" />
+	</declare-styleable>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!--Offsets-->
+	<dimen name="offset_small_quarter">2dp</dimen>
+	<dimen name="offset_small_half">6dp</dimen>
+	<dimen name="offset_regular_half">10dp</dimen>
+	<dimen name="offset_small">12dp</dimen>
+	<dimen name="offset_regular">20dp</dimen>
+	<dimen name="offset_average">28dp</dimen>
+	<dimen name="offset_regular_double">40dp</dimen>
+
+	<dimen name="offset_huge">52dp</dimen>
+	<dimen name="offset_giant">68dp</dimen>
+
+	<!--Text-->
+	<dimen name="text_small">12sp</dimen>
+	<dimen name="text_regular">14sp</dimen>
+	<dimen name="text_big">18sp</dimen>
+	<dimen name="text_large">20sp</dimen>
+
+	<dimen name="text_digits_regular">28sp</dimen>
+	<dimen name="text_digits_big">34sp</dimen>
+	<dimen name="text_digits_regular_rest">16sp</dimen>
+	<dimen name="text_digits_big_rest">22sp</dimen>
+
+	<!--Toolbar-->
+	<dimen name="toolbar_height">56dp</dimen>
+	<dimen name="toolbar_padding">4dp</dimen>
+	<dimen name="toolbar_icon_size">48dp</dimen>
+	<dimen name="toolbar_title_size">48dp</dimen>
+	<dimen name="toolbar_icon_padding">12dp</dimen>
+	<dimen name="toolbar_icon_ripple_radius">24dp</dimen>
+
+	<!--General-->
+	<dimen name="divider_horizontal_height">1dp</dimen>
+</resources>

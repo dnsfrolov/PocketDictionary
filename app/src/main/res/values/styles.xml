@@ -1,0 +1,112 @@
+<resources>
+
+	<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:windowBackground">@color/colorWindowBackground</item>
+		<item name="android:navigationBarColor">@color/colorPrimary</item>
+	</style>
+
+	<!--Text-->
+	<style name="Text">
+		<item name="android:fontFamily">@font/norths_thin</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+
+	<style name="Text.Small" parent="Text">
+		<item name="android:textSize">@dimen/text_small</item>
+	</style>
+
+	<style name="Text.Regular" parent="Text">
+		<item name="android:textSize">@dimen/text_regular</item>
+	</style>
+
+	<style name="Text.Big" parent="Text">
+		<item name="android:textSize">@dimen/text_big</item>
+	</style>
+
+	<style name="Text.Dialog.Title" parent="Text.Regular">
+		<item name="android:layout_margin">8dp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/colorPrimary</item>
+	</style>
+
+	<!--Divider-->
+	<style name="Divider">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">@dimen/divider_horizontal_height</item>
+	</style>
+
+	<style name="Divider.Dark" parent="Divider">
+		<item name="android:background">#20212121</item>
+	</style>
+
+	<style name="Divider.Gold" parent="Divider">
+		<item name="android:background">@color/colorGold</item>
+		<item name="android:layout_height">@dimen/dp_4</item>
+	</style>
+
+	<!--Toolbar-->
+	<style name="Toolbar">
+		<item name="android:id">@id/toolbar</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">@dimen/toolbar_height</item>
+		<item name="android:background">@color/colorPrimary</item>
+	</style>
+
+	<style name="Toolbar.Title" parent="Text.Big">
+		<item name="android:textStyle">bold</item>
+		<item name="android:layout_marginStart">16dp</item>
+		<item name="android:layout_marginEnd">16dp</item>
+		<item name="android:textSize">22sp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:fontFamily">@font/norths_thin</item>
+		<item name="android:textColor">@color/colorGold</item>
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+
+	<style name="Toolbar.Button">
+		<item name="android:layout_width">@dimen/toolbar_icon_size</item>
+		<item name="android:layout_height">@dimen/toolbar_icon_size</item>
+		<item name="android:padding">@dimen/toolbar_icon_padding</item>
+		<!--<item name="android:background">@drawable/bg_ic_selector</item>-->
+	</style>
+
+	<!--Layout-->
+
+	<!--Tint-->
+	<!--<style name="Tint">
+		<item name="android:id">@id/act_toolbar_tint</item>
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:background">@drawable/tint_top</item>
+		<item name="android:layout_height">6dp</item>
+	</style>
+
+	<style name="Tint.Top" parent="Tint">
+		<item name="android:id">@id/act_toolbar_tint</item>
+		<item name="android:layout_gravity">top</item>
+	</style>
+
+	<style name="Tint.Bottom" parent="Tint">
+		<item name="android:id">@id/act_toolbar_tint</item>
+		<item name="android:layout_height">1dp</item>
+		<item name="android:background">@drawable/tint_bottom</item>
+		<item name="android:layout_gravity">bottom</item>
+	</style>
+
+	<style name="Tint.Top.Gold">
+		<item name="android:background">@drawable/tint_top_gold</item>
+		<item name="android:layout_height">8dp</item>
+	</style>-->
+
+	<item name="tint" type="id" />
+
+	<!--Font-->
+	<style name="TabLayout.Font" parent="@android:style/TextAppearance.Widget.TabWidget">
+		<item name="android:fontFamily">@font/norths_thin</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">16sp</item>
+	</style>
+</resources>

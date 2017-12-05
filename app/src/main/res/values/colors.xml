@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#131313</color>
+	<color name="colorPrimaryDark">#131313</color>
+	<color name="colorWindowBackground">#131313</color>
+	<color name="colorAccent">#1A1A1A</color>
+
+	<color name="colorGold">#FFE39D</color>
+	<color name="colorGoldLight">#ffe7ad</color>
+	<color name="colorLight">#FAFAFA</color>
+	<color name="colorDark">#080F15</color>
+	<color name="colorGreyDark">#47303030</color>
+	<color name="greyLight">#FFDEDEDE</color>
+
+	<color name="default_ripple">#bddbdbdb</color>
+</resources>
