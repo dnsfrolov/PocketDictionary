@@ -6,11 +6,13 @@
 	<color name="colorAccent">#1A1A1A</color>
 
 	<color name="colorGold">#FFE39D</color>
+	<color name="colorContentGold">#a99665</color>
+	<color name="colorIconGold">#8D7B52</color>
 	<color name="colorGoldLight">#ffe7ad</color>
 	<color name="colorLight">#FAFAFA</color>
 	<color name="colorDark">#080F15</color>
 	<color name="colorGreyDark">#47303030</color>
 	<color name="greyLight">#FFDEDEDE</color>
 
-	<color name="default_ripple">#bddbdbdb</color>
+	<color name="default_ripple">#ffe7ad</color>
 </resources>

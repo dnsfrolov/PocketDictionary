@@ -30,8 +30,9 @@
 	<dimen name="toolbar_icon_size">48dp</dimen>
 	<dimen name="toolbar_title_size">48dp</dimen>
 	<dimen name="toolbar_icon_padding">12dp</dimen>
-	<dimen name="toolbar_icon_ripple_radius">24dp</dimen>
+	<dimen name="toolbar_icon_ripple_radius">16dp</dimen>
 
 	<!--General-->
 	<dimen name="divider_horizontal_height">1dp</dimen>
+	<dimen name="icon_ripple_radius">18dp</dimen>
 </resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="8dp"
+			android:gravity="center|start"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/txt_dictionary_item_word"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/norths_thin"
+				android:textColor="@color/colorContentGold"
+				android:textSize="18sp"
+				tools:text="Just do it" />
+
+			<TextView
+				android:id="@+id/txt_dictionary_item_translated_word"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="monospace"
+				android:textColor="#8c8c8c"
+				tools:text="Просто зроби це" />
+		</LinearLayout>
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end|center"
+			android:layout_marginEnd="16dp"
+			android:layout_marginTop="4dp"
+			android:background="@drawable/bg_ic_selector"
+			android:clickable="true"
+			android:focusable="true"
+			android:src="@drawable/ic_play"
+			tools:ignore="ContentDescription" />
+	</FrameLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="8dp"
+		android:background="#1a1a1a" />
+</LinearLayout>

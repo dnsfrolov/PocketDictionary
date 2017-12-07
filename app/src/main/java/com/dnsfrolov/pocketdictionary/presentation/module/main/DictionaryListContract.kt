@@ -1,6 +1,7 @@
 package com.dnsfrolov.pocketdictionary.presentation.module.main
 
 import com.dnsfrolov.gymtracker.app.base.mvp.BaseMvpContract
+import com.dnsfrolov.pocketdictionary.data.model.Word
 
 /**
  * project: PocketDictionary
@@ -8,13 +9,15 @@ import com.dnsfrolov.gymtracker.app.base.mvp.BaseMvpContract
  * owner: SegaSunset
  * email: denis.frolov.work@gmail.com
  */
-interface MainContract {
+interface DictionaryListContract {
 
 	interface View : BaseMvpContract.View {
 
+		fun showWordList(dictionaryList: List<Word>)
 	}
 
 	interface Presenter : BaseMvpContract.Presenter<View> {
 
+		fun getWordList()
 	}
 }

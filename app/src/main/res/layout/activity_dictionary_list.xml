@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<com.dnsfrolov.pocketdictionary.presentation.widget.Toolbar
+			style="@style/Toolbar"
+			android:title="@string/app_name"
+			app:icon_first_end="@drawable/ic_dots_menu"
+			app:icon_second_end="@drawable/ic_search"
+			app:title_position="start" />
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv_words_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+	</LinearLayout>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab_add"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|end"
+		android:layout_margin="24dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:fabSize="normal" />
+
+</android.support.design.widget.CoordinatorLayout>

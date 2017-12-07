@@ -2,11 +2,13 @@ package com.dnsfrolov.pocketdictionary.presentation.widget
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.v4.view.animation.FastOutLinearInInterpolator
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import com.dnsfrolov.pocketdictionary.R
+import com.dnsfrolov.pocketdictionary.R.id.*
 import kotlinx.android.synthetic.main.layout_toolbar.view.*
 
 /**
@@ -17,27 +19,20 @@ import kotlinx.android.synthetic.main.layout_toolbar.view.*
  */
 class Toolbar : FrameLayout {
 	companion object {
-		val START_ICON = R.id.img_toolbar_start_icon
-		val END_FIRST_ICON = R.id.img_toolbar_end_first_icon
-		val END_SECOND_ICON = R.id.img_toolbar_end_second_icon
+		val START_ICON = img_toolbar_start_icon
+		val END_FIRST_ICON = img_toolbar_end_first_icon
+		val END_SECOND_ICON = img_toolbar_end_second_icon
 
-		private val POSITION_START = "start"
-		private val POSITION_CENTER = "center"
-		private val POSITION_END = "end"
+		val POSITION_START = "start"
+		val POSITION_CENTER = "center"
+		val POSITION_END = "end"
 	}
 
-	constructor(context: Context?)
-			: super(context) {
+	constructor(context: Context?) : super(context) {
 		init(null)
 	}
 
-	constructor(context: Context?, attrs: AttributeSet?)
-			: super(context, attrs) {
-		init(attrs)
-	}
-
-	constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
-			: super(context, attrs, defStyleAttr) {
+	constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
 		init(attrs)
 	}
 
@@ -55,7 +50,7 @@ class Toolbar : FrameLayout {
 			txt_toolbar_title.text = typedArray.getString(R.styleable.Toolbar_android_title)
 			val startIcon = typedArray.getDrawable(R.styleable.Toolbar_icon_start)
 			val endFirstIcon = typedArray.getDrawable(R.styleable.Toolbar_icon_first_end)
-			val endSecondIcon = typedArray.getDrawable(R.styleable.Toolbar_icon_first_end)
+			val endSecondIcon = typedArray.getDrawable(R.styleable.Toolbar_icon_second_end)
 			val titlePosition = typedArray.getString(R.styleable.Toolbar_title_position)
 			setStartDrawable(startIcon)
 			setEndFirstDrawable(endFirstIcon)
@@ -78,7 +73,6 @@ class Toolbar : FrameLayout {
 		when (titlePosition) {
 			POSITION_START -> {
 				img_toolbar_start_icon.visibility = View.GONE
-				txt_toolbar_title.gravity = Gravity.START
 			}
 			POSITION_CENTER -> {
 				img_toolbar_end_second_icon.visibility = View.GONE
@@ -104,7 +98,25 @@ class Toolbar : FrameLayout {
 
 	fun setEndSecondDrawable(endSecondIcon: Drawable?) {
 		img_toolbar_end_second_icon.setImageDrawable(endSecondIcon)
+	}
+
+	fun showEndSecondDrawable() {
 		img_toolbar_end_second_icon.visibility = View.VISIBLE
+		img_toolbar_end_second_icon.animate()
+				.alpha(1F)
+				.setDuration(150L)
+				.scaleX(1F)
+				.scaleY(1F).interpolator = FastOutLinearInInterpolator()
+	}
+
+	fun hideEndSecondDrawable() {
+		img_toolbar_end_second_icon.animate()
+				.alpha(0F)
+				.setDuration(150L)
+				.scaleX(0F)
+				.scaleY(0F)
+				.setInterpolator(FastOutLinearInInterpolator())
+				.withEndAction({ img_toolbar_end_second_icon.visibility = View.GONE })
 	}
 
 	fun setIconsClickListener(onClickListener: View.OnClickListener?) {
@@ -125,5 +137,10 @@ class Toolbar : FrameLayout {
 
 	fun setEndSecondClickListener(clickListener: View.OnClickListener) {
 		img_toolbar_end_second_icon.setOnClickListener(clickListener)
+	}
+
+	override fun onDetachedFromWindow() {
+		super.onDetachedFromWindow()
+		img_toolbar_end_second_icon.animate().cancel()
 	}
 }
