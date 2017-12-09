@@ -2,13 +2,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:padding="@dimen/toolbar_padding">
+	android:layout_height="wrap_content">
 
 	<LinearLayout
 		android:id="@+id/toolbar_title_container"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:gravity="center"
 		android:orientation="horizontal">
 
 		<ImageView
@@ -21,7 +21,6 @@
 			android:id="@+id/txt_toolbar_title"
 			style="@style/Toolbar.Title"
 			android:layout_height="@dimen/toolbar_title_size"
-			android:visibility="gone"
 			tools:text="Pocket Dictionary" />
 	</LinearLayout>
 
@@ -32,7 +31,7 @@
 		android:layout_marginBottom="4dp"
 		android:layout_marginStart="16dp"
 		android:layout_marginTop="4dp"
-		android:visibility="visible" />
+		android:visibility="gone" />
 
 	<LinearLayout
 		android:id="@+id/toolbar_icon_end_container"

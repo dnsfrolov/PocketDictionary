@@ -28,6 +28,7 @@ class DictionaryListActivity :
 	}
 
 	override fun configureToolbar(toolbar: ToolbarLayout) {
+		toolbar.setEndFirstIcon(getDrawable(R.drawable.ic_settings))
 		toolbar.setEndFirstIconClickListener(this)
 	}
 
@@ -50,14 +51,8 @@ class DictionaryListActivity :
 		rv_words_list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 			override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
 				super.onScrolled(recyclerView, dx, dy)
-
-				if (dy > 0 && fab_add.visibility == View.VISIBLE) {
-					fab_add.hide()
-					//toolbar.validateEndSecondIcon()
-				} else if (dy < 0 && fab_add.visibility != View.VISIBLE) {
-					fab_add.show()
-					//toolbar.hideEndSecondDrawable()
-				}
+				if (dy > 0 && fab_add.visibility == View.VISIBLE) fab_add.hide()
+				else if (dy < 0 && fab_add.visibility != View.VISIBLE) fab_add.show()
 			}
 		})
 	}
@@ -78,7 +73,7 @@ class DictionaryListActivity :
 		when (v?.id) {
 			ToolbarLayout.END_FIRST_ICON -> {
 				show = if (!show) {
-					toolbar.setEndSecondIcon(getDrawable(R.drawable.ic_settings))
+					toolbar.setEndSecondIcon(getDrawable(R.drawable.ic_prefs))
 					toolbar.setEndThirdIcon(getDrawable(R.drawable.ic_search))
 					toolbar.setEndSecondClickListener(this)
 					toolbar.setEndThirdClickListener(this)
@@ -93,28 +88,17 @@ class DictionaryListActivity :
 					false
 				}
 
-				if (toolbar.isSearchLayoutVisibility()) {
+				if (toolbar.isSearchLayoutVisible()) {
 					toolbar.setSearchLayoutVisibility(false)
 				}
-				/*show = if (!show) {
-					toolbar.setEndSecondIcon(getDrawable(R.drawable.ic_search))
-					toolbar.setEndSecondClickListener(this)
-					toolbar.validateEndSecondIcon()
-					true
-				} else {
-					toolbar.hideEndSecondDrawable()
-					toolbar.setEndSecondClickListener(null)
-					false
-				}*/
 			}
 			ToolbarLayout.END_SECOND_ICON -> {
-				Toast.makeText(this, "second", Toast.LENGTH_SHORT).show()
+				Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
 			}
 			ToolbarLayout.END_THIRD_ICON -> {
-				Toast.makeText(this, "third", Toast.LENGTH_SHORT).show()
 				toolbar.validateEndSecondIcon(false)
-				toolbar.setEndSecondClickListener(null)
 				toolbar.validateEndThirdIcon(false)
+				toolbar.setEndSecondClickListener(null)
 				toolbar.setEndThirdClickListener(null)
 				toolbar.setSearchLayoutVisibility(true)
 				show = false

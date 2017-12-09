@@ -72,14 +72,16 @@ class ToolbarLayout : FrameLayout {
 
 	fun setSearchLayoutVisibility(searchVisibility: Boolean) {
 		if (searchVisibility) {
+			toolbar_title_container.visibility = View.GONE
 			toolbar_search.visibility = View.VISIBLE
 		} else {
+			toolbar_title_container.visibility = View.VISIBLE
 			toolbar_search.visibility = View.GONE
 		}
 	}
 
-	fun isSearchLayoutVisibility(): Boolean {
-		return toolbar_search.visibility != View.GONE
+	fun isSearchLayoutVisible(): Boolean {
+		return toolbar_search.isShown
 	}
 
 	fun setTitlePosition(titlePosition: String) {

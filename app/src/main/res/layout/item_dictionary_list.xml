@@ -23,7 +23,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:fontFamily="@font/norths_thin"
-				android:textColor="@color/colorContentGold"
+				android:textColor="@color/colorGold"
 				android:textSize="18sp"
 				tools:text="Just do it" />
 

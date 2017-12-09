@@ -48,7 +48,7 @@
 		<item name="android:layout_height">@dimen/dp_4</item>
 	</style>
 
-	ToolbarLayoutlbar-->
+	<!--ToolbarLayout-->
 	<style name="Toolbar">
 		<item name="android:id">@id/toolbar</item>
 		<item name="android:layout_width">match_parent</item>
@@ -63,7 +63,7 @@
 		<item name="android:textSize">22sp</item>
 		<item name="android:gravity">center</item>
 		<item name="android:fontFamily">@font/norths_thin</item>
-		<item name="android:textColor">@color/colorGold</item>
+		<item name="android:textColor">@color/colorContentGold</item>
 		<item name="android:layout_gravity">center_horizontal</item>
 	</style>
 
