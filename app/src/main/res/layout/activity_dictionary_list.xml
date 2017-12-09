@@ -10,11 +10,10 @@
 		android:layout_height="match_parent"
 		android:orientation="vertical">
 
-		<com.dnsfrolov.pocketdictionary.presentation.widget.Toolbar
+		<com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
 			style="@style/Toolbar"
 			android:title="@string/app_name"
-			app:icon_first_end="@drawable/ic_dots_menu"
-			app:icon_second_end="@drawable/ic_search"
+			app:icon_first_end="@drawable/ic_dots_vertical"
 			app:title_position="start" />
 
 		<android.support.v7.widget.RecyclerView

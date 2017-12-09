@@ -24,7 +24,7 @@
 	<dimen name="text_digits_regular_rest">16sp</dimen>
 	<dimen name="text_digits_big_rest">22sp</dimen>
 
-	<!--Toolbar-->
+	ToolbarLayoutlbar-->
 	<dimen name="toolbar_height">56dp</dimen>
 	<dimen name="toolbar_padding">4dp</dimen>
 	<dimen name="toolbar_icon_size">48dp</dimen>

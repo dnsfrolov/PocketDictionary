@@ -3,11 +3,17 @@
 
 	<item name="toolbar" type="id" />
 
-	<declare-styleable name="Toolbar">
+	<declare-styleable name="ToolbarLayout">
 		<attr name="android:title" />
 		<attr name="icon_start" format="reference" />
 		<attr name="icon_first_end" format="reference" />
 		<attr name="icon_second_end" format="reference" />
+		<attr name="icon_third_end" format="reference" />
 		<attr name="title_position" format="string" />
+		<attr name="search_visibility" format="boolean" />
+	</declare-styleable>
+
+	<declare-styleable name="SearchLayout">
+
 	</declare-styleable>
 </resources>

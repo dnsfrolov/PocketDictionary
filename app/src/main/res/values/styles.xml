@@ -48,7 +48,7 @@
 		<item name="android:layout_height">@dimen/dp_4</item>
 	</style>
 
-	<!--Toolbar-->
+	ToolbarLayoutlbar-->
 	<style name="Toolbar">
 		<item name="android:id">@id/toolbar</item>
 		<item name="android:layout_width">match_parent</item>

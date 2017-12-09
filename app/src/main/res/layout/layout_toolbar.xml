@@ -3,39 +3,66 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="@color/colorPrimary"
-	android:padding="@dimen/toolbar_padding"
-	tools:parentTag="android.widget.LinearLayout">
-
-	<ImageView
-		android:id="@+id/img_toolbar_start_icon"
-		style="@style/Toolbar.Button"
-		android:layout_gravity="start"
-		tools:ignore="ContentDescription" />
-
-	<TextView
-		android:id="@+id/txt_toolbar_title"
-		style="@style/Toolbar.Title"
-		android:layout_height="@dimen/toolbar_title_size"
-		android:layout_gravity="start"
-		tools:text="Pocket Dictionary" />
+	android:padding="@dimen/toolbar_padding">
 
 	<LinearLayout
+		android:id="@+id/toolbar_title_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:id="@+id/img_toolbar_start_icon"
+			style="@style/Toolbar.Button"
+			tools:ignore="ContentDescription"
+			tools:visibility="gone" />
+
+		<TextView
+			android:id="@+id/txt_toolbar_title"
+			style="@style/Toolbar.Title"
+			android:layout_height="@dimen/toolbar_title_size"
+			android:visibility="gone"
+			tools:text="Pocket Dictionary" />
+	</LinearLayout>
+
+	<com.dnsfrolov.pocketdictionary.presentation.widget.SearchLayout
+		android:id="@+id/toolbar_search"
+		android:layout_width="276dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="4dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="4dp"
+		android:visibility="visible" />
+
+	<LinearLayout
+		android:id="@+id/toolbar_icon_end_container"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="end"
-		android:gravity="end">
+		android:orientation="horizontal">
+
+		<ImageView
+			android:id="@+id/img_toolbar_end_third_icon"
+			style="@style/Toolbar.Button"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			tools:ignore="ContentDescription"
+			tools:src="@drawable/ic_search" />
 
 		<ImageView
 			android:id="@+id/img_toolbar_end_second_icon"
 			style="@style/Toolbar.Button"
-			android:layout_gravity="end"
-			tools:ignore="ContentDescription" />
+			android:layout_gravity="center"
+			android:visibility="gone"
+			tools:ignore="ContentDescription"
+			tools:src="@drawable/ic_settings" />
 
 		<ImageView
 			android:id="@+id/img_toolbar_end_first_icon"
 			style="@style/Toolbar.Button"
-			android:layout_gravity="end"
-			tools:ignore="ContentDescription" />
+			android:layout_gravity="center"
+			android:visibility="gone"
+			tools:ignore="ContentDescription"
+			tools:src="@drawable/ic_dots_vertical" />
 	</LinearLayout>
 </FrameLayout>

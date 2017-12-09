@@ -5,7 +5,7 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import com.dnsfrolov.gymtracker.app.base.mvp.BaseMvpContract
 import com.dnsfrolov.pocketdictionary.R
-import com.dnsfrolov.pocketdictionary.presentation.widget.Toolbar
+import com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
 
 /**
  * project: PocketDictionary
@@ -19,14 +19,14 @@ abstract class BaseMvpActivity<in V : BaseMvpContract.View, P : BaseMvpContract.
 
 	open protected lateinit var presenter: P
 
-	protected lateinit var toolbar: Toolbar
+	protected lateinit var toolbar: ToolbarLayout
 
 	@LayoutRes
 	protected abstract fun getContentView(): Int
 
 	protected abstract fun providePresenter(): P
 
-	protected open fun configureToolbar(toolbar: Toolbar) {}
+	protected open fun configureToolbar(toolbar: ToolbarLayout) {}
 
 	open protected fun configureUI() {}
 
