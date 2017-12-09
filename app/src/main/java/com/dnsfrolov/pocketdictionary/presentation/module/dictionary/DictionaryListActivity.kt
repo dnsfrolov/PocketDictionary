@@ -1,4 +1,4 @@
-package com.dnsfrolov.pocketdictionary.presentation.module.main
+package com.dnsfrolov.pocketdictionary.presentation.module.dictionary
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

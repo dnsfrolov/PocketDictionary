@@ -1,4 +1,4 @@
-package com.dnsfrolov.pocketdictionary.presentation.module.main
+package com.dnsfrolov.pocketdictionary.presentation.module.dictionary
 
 import com.dnsfrolov.gymtracker.app.base.mvp.BasePresenterImpl
 import com.dnsfrolov.pocketdictionary.data.interactor.DictionaryInteractor
