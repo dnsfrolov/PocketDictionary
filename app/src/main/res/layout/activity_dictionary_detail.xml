@@ -1,6 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
 
+	<com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
+		style="@style/Toolbar"
+		android:title="@string/app_name"
+		app:title_position="center" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="16dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="8dp"
+		android:orientation="vertical">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="top"
+				android:layout_gravity="center_vertical"
+				android:fontFamily="@font/norths_thin"
+				android:text="Word:"
+				android:textColor="#717171"
+				android:textSize="16sp" />
+
+			<EditText
+				android:layout_width="220dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:background="@null"
+				android:gravity="end"
+				android:padding="@dimen/dp_4"
+				android:text="Maudlin"
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</FrameLayout>
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:fontFamily="@font/norths_thin"
+				android:text="Transcription:"
+				android:textColor="#717171"
+				android:textSize="16sp" />
+
+			<EditText
+				android:layout_width="220dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:background="@null"
+				android:gravity="end"
+				android:padding="@dimen/dp_4"
+				android:text="mɔːdlɪn"
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</FrameLayout>
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:fontFamily="@font/norths_thin"
+				android:text="Translation:"
+				android:textColor="#717171"
+				android:textSize="16sp" />
+
+			<EditText
+				android:layout_width="220dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:background="@null"
+				android:gravity="end"
+				android:padding="@dimen/dp_4"
+				android:text="Плаксивый"
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</FrameLayout>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/offset_small_half"
+			android:fontFamily="@font/norths_thin"
+			android:text="Examples:"
+			android:textColor="#717171"
+			android:textSize="16sp" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="2dp"
+			android:layout_marginTop="2dp">
+
+			<TextView
+				android:layout_width="32dp"
+				android:layout_height="16dp"
+				android:fontFamily="monospace"
+				android:gravity="center|start"
+				android:lines="1"
+				android:text="I."
+				android:textColor="#717171"
+				android:textSize="12sp" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@null"
+				android:text="A maudlin movie about a lovable tramp maudlin movie about maudlin movie about."
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="2dp"
+			android:layout_marginTop="2dp">
+
+			<TextView
+				android:layout_width="32dp"
+				android:layout_height="16dp"
+				android:fontFamily="monospace"
+				android:gravity="center|start"
+				android:lines="1"
+				android:text="II."
+				android:textColor="#717171"
+				android:textSize="12sp" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@null"
+				android:text="A maudlin movie about a lovable tramp."
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="2dp"
+			android:layout_marginTop="2dp">
+
+			<TextView
+				android:layout_width="32dp"
+				android:layout_height="16dp"
+				android:fontFamily="monospace"
+				android:gravity="center|start"
+				android:lines="1"
+				android:text="III."
+				android:textColor="#717171"
+				android:textSize="12sp" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@null"
+				android:text="A about maudlin about movie about about a lovable tramp."
+				android:textColor="@color/colorContentGold"
+				android:textSize="16sp" />
+		</LinearLayout>
+	</LinearLayout>
 </LinearLayout>

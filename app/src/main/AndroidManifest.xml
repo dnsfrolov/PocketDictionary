@@ -11,10 +11,11 @@
 		<activity android:name=".presentation.module.dictionary.DictionaryListActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
-
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".presentation.module.dictionary.detail.DictionaryDetailActivity" />
+		<activity
+			android:name=".presentation.module.dictionary.detail.DictionaryDetailActivity"
+			android:exported="true" />
 	</application>
 </manifest>

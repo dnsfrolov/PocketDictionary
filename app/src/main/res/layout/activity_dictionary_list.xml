@@ -13,7 +13,6 @@
 		<com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
 			style="@style/Toolbar"
 			android:title="@string/app_name"
-			app:icon_first_end="@drawable/ic_dots_vertical"
 			app:title_position="start" />
 
 		<android.support.v7.widget.RecyclerView
