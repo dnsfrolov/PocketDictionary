@@ -1,6 +1,7 @@
 package com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail
 
 import com.dnsfrolov.gymtracker.app.base.mvp.BaseMvpContract
+import com.dnsfrolov.pocketdictionary.data.model.Word
 
 /**
  * project: PocketDictionary
@@ -12,9 +13,11 @@ interface DictionaryDetailContract {
 
 	interface View : BaseMvpContract.View {
 
+		fun showWordDetails(word: Word?)
 	}
 
 	interface Presenter : BaseMvpContract.Presenter<View> {
 
+		fun getWordDetails()
 	}
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical">
@@ -25,48 +26,52 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:gravity="top"
-				android:layout_gravity="center_vertical"
+				android:layout_gravity="start|top"
+				android:layout_marginTop="5dp"
 				android:fontFamily="@font/norths_thin"
 				android:text="Word:"
 				android:textColor="#717171"
 				android:textSize="16sp" />
 
 			<EditText
+				android:id="@+id/etxt_dictionary_detail_word"
 				android:layout_width="220dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="end"
 				android:background="@null"
 				android:gravity="end"
 				android:padding="@dimen/dp_4"
-				android:text="Maudlin"
 				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
+				android:textSize="16sp"
+				tools:text="Maudlin" />
 		</FrameLayout>
 
 		<FrameLayout
+			android:id="@+id/fl_dictionary_detail_transcription"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
 
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_gravity="center_vertical"
+				android:layout_gravity="start|top"
+				android:layout_marginTop="5dp"
 				android:fontFamily="@font/norths_thin"
 				android:text="Transcription:"
 				android:textColor="#717171"
 				android:textSize="16sp" />
 
 			<EditText
+				android:id="@+id/etxt_dictionary_detail_transcription"
 				android:layout_width="220dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="end"
 				android:background="@null"
 				android:gravity="end"
 				android:padding="@dimen/dp_4"
-				android:text="mɔːdlɪn"
 				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
+				android:textSize="16sp"
+				tools:text="mɔːdlɪn" />
 		</FrameLayout>
 
 		<FrameLayout
@@ -76,106 +81,39 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_gravity="center_vertical"
+				android:layout_gravity="start|top"
+				android:layout_marginTop="5dp"
 				android:fontFamily="@font/norths_thin"
 				android:text="Translation:"
 				android:textColor="#717171"
 				android:textSize="16sp" />
 
 			<EditText
+				android:id="@+id/etxt_dictionary_detail_translation"
 				android:layout_width="220dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="end"
 				android:background="@null"
 				android:gravity="end"
 				android:padding="@dimen/dp_4"
-				android:text="Плаксивый"
 				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
+				android:textSize="16sp"
+				tools:text="Плаксивый" />
 		</FrameLayout>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/offset_small_half"
+			android:layout_marginTop="16dp"
 			android:fontFamily="@font/norths_thin"
 			android:text="Examples:"
 			android:textColor="#717171"
 			android:textSize="16sp" />
 
-		<LinearLayout
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv_dictionary_detail_word_example"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="2dp"
-			android:layout_marginTop="2dp">
-
-			<TextView
-				android:layout_width="32dp"
-				android:layout_height="16dp"
-				android:fontFamily="monospace"
-				android:gravity="center|start"
-				android:lines="1"
-				android:text="I."
-				android:textColor="#717171"
-				android:textSize="12sp" />
-
-			<EditText
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@null"
-				android:text="A maudlin movie about a lovable tramp maudlin movie about maudlin movie about."
-				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="2dp"
-			android:layout_marginTop="2dp">
-
-			<TextView
-				android:layout_width="32dp"
-				android:layout_height="16dp"
-				android:fontFamily="monospace"
-				android:gravity="center|start"
-				android:lines="1"
-				android:text="II."
-				android:textColor="#717171"
-				android:textSize="12sp" />
-
-			<EditText
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@null"
-				android:text="A maudlin movie about a lovable tramp."
-				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="2dp"
-			android:layout_marginTop="2dp">
-
-			<TextView
-				android:layout_width="32dp"
-				android:layout_height="16dp"
-				android:fontFamily="monospace"
-				android:gravity="center|start"
-				android:lines="1"
-				android:text="III."
-				android:textColor="#717171"
-				android:textSize="12sp" />
-
-			<EditText
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="@null"
-				android:text="A about maudlin about movie about about a lovable tramp."
-				android:textColor="@color/colorContentGold"
-				android:textSize="16sp" />
-		</LinearLayout>
+			android:layout_height="match_parent"
+			app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 	</LinearLayout>
 </LinearLayout>

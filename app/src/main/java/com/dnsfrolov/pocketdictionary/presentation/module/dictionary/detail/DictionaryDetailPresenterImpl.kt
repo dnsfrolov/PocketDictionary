@@ -1,6 +1,7 @@
 package com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail
 
 import com.dnsfrolov.gymtracker.app.base.mvp.BasePresenterImpl
+import com.dnsfrolov.pocketdictionary.data.interactor.DictionaryInteractorImpl
 
 /**
  * project: PocketDictionary
@@ -12,4 +13,9 @@ class DictionaryDetailPresenterImpl :
 		BasePresenterImpl<DictionaryDetailContract.View>(),
 		DictionaryDetailContract.Presenter {
 
+	private val dictionaryInteractor = DictionaryInteractorImpl()
+
+	override fun getWordDetails() {
+		view?.showWordDetails(dictionaryInteractor.getDictionaryList()[0])
+	}
 }

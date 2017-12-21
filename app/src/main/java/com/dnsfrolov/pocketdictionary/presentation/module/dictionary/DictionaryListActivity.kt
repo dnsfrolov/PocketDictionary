@@ -7,7 +7,9 @@ import com.dnsfrolov.pocketdictionary.R
 import com.dnsfrolov.pocketdictionary.data.model.Word
 import com.dnsfrolov.pocketdictionary.presentation.adapter.DictionaryListAdapter
 import com.dnsfrolov.pocketdictionary.presentation.base.BaseMvpActivity
+import com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail.dictionaryDetailIntent
 import com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
+import com.dnsfrolov.pocketdictionary.util.OnWordClickListener
 import kotlinx.android.synthetic.main.activity_dictionary_list.*
 
 /**
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_dictionary_list.*
  */
 class DictionaryListActivity :
 		BaseMvpActivity<DictionaryListContract.View, DictionaryListContract.Presenter>(),
-		DictionaryListContract.View, View.OnClickListener {
+		DictionaryListContract.View, View.OnClickListener, OnWordClickListener {
 
 	private lateinit var adapter: DictionaryListAdapter
 	private var show: Boolean = false
@@ -38,35 +40,20 @@ class DictionaryListActivity :
 		initScrollingListener()
 	}
 
-	private fun initAdapter() {
-		adapter = DictionaryListAdapter()
-		rv_words_list.adapter = adapter
-	}
-
-	private fun initFab() {
-		fab_add.setOnClickListener(this)
-	}
-
-	private fun initScrollingListener() {
-		rv_words_list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-			override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-				super.onScrolled(recyclerView, dx, dy)
-				if (dy > 0 && fab_add.visibility == View.VISIBLE) fab_add.hide()
-				else if (dy < 0 && fab_add.visibility != View.VISIBLE) fab_add.show()
-			}
-		})
+	override fun providePresenter(): DictionaryListContract.Presenter {
+		return DictionaryListPresenterImpl()
 	}
 
 	override fun configurePresenter() {
 		presenter.getWordList()
 	}
 
-	override fun providePresenter(): DictionaryListContract.Presenter {
-		return DictionaryListPresenterImpl()
-	}
-
 	override fun showWordList(dictionaryList: List<Word>) {
 		adapter.setNewData(dictionaryList)
+	}
+
+	override fun onWordClick(wordId: Int) {
+		startActivity(dictionaryDetailIntent(wordId))
 	}
 
 	override fun onClick(v: View?) {
@@ -87,7 +74,6 @@ class DictionaryListActivity :
 					toolbar.setEndThirdClickListener(null)
 					false
 				}
-
 				if (toolbar.isSearchLayoutVisible()) {
 					toolbar.setSearchLayoutVisibility(false)
 				}
@@ -104,5 +90,24 @@ class DictionaryListActivity :
 				show = false
 			}
 		}
+	}
+
+	private fun initAdapter() {
+		adapter = DictionaryListAdapter(this)
+		rv_dictionary_list.adapter = adapter
+	}
+
+	private fun initFab() {
+		fab_add.setOnClickListener(this)
+	}
+
+	private fun initScrollingListener() {
+		rv_dictionary_list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+			override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+				super.onScrolled(recyclerView, dx, dy)
+				if (dy > 0 && fab_add.visibility == View.VISIBLE) fab_add.hide()
+				else if (dy < 0 && fab_add.visibility != View.VISIBLE) fab_add.show()
+			}
+		})
 	}
 }

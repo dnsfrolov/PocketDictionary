@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="2dp"
+	android:layout_marginTop="2dp">
+
+	<TextView
+		android:id="@+id/txt_word_example_id_example"
+		android:layout_width="32dp"
+		android:layout_height="16dp"
+		android:fontFamily="monospace"
+		android:gravity="center|start"
+		android:lines="1"
+		android:textColor="#717171"
+		android:textSize="12sp"
+		tools:text="I." />
+
+	<EditText
+		android:id="@+id/etxt_word_example_example"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@null"
+		android:textColor="@color/colorContentGold"
+		android:textSize="16sp"
+		tools:text="A maudlin movie about a lovable tramp maudlin movie about maudlin movie about." />
+</LinearLayout>

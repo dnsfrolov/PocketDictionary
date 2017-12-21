@@ -6,7 +6,8 @@ package com.dnsfrolov.pocketdictionary.data.model
  * owner: SegaSunset
  * email: denis.frolov.work@gmail.com
  */
-class Word(val id: Long,
+class Word(val id: Int,
 		   val word: String,
-		   val translatedWord: String,
-		   val examples: List<WordExample>)
+		   val transcription: String?,
+		   val translation: String,
+		   val examples: List<WordExample>?)
