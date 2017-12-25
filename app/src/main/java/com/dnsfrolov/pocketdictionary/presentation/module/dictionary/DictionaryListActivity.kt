@@ -7,7 +7,7 @@ import com.dnsfrolov.pocketdictionary.R
 import com.dnsfrolov.pocketdictionary.data.model.Word
 import com.dnsfrolov.pocketdictionary.presentation.adapter.DictionaryListAdapter
 import com.dnsfrolov.pocketdictionary.presentation.base.BaseMvpActivity
-import com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail.dictionaryDetailIntent
+import com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail.DictionaryDetailActivity
 import com.dnsfrolov.pocketdictionary.presentation.widget.ToolbarLayout
 import com.dnsfrolov.pocketdictionary.util.OnWordClickListener
 import kotlinx.android.synthetic.main.activity_dictionary_list.*
@@ -53,7 +53,7 @@ class DictionaryListActivity :
 	}
 
 	override fun onWordClick(wordId: Int) {
-		startActivity(dictionaryDetailIntent(wordId))
+		startActivity(DictionaryDetailActivity.newIntent(this, DictionaryDetailActivity.UPDATE, wordId))
 	}
 
 	override fun onClick(v: View?) {

@@ -15,7 +15,7 @@ class DictionaryDetailPresenterImpl :
 
 	private val dictionaryInteractor = DictionaryInteractorImpl()
 
-	override fun getWordDetails() {
-		view?.showWordDetails(dictionaryInteractor.getDictionaryList()[0])
+	override fun getWordDetails(wordId: Int) {
+		view?.showWordDetails(dictionaryInteractor.getDictionaryList()[wordId])
 	}
 }

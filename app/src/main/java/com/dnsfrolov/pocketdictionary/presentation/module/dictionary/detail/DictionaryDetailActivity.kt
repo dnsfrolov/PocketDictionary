@@ -2,6 +2,7 @@ package com.dnsfrolov.pocketdictionary.presentation.module.dictionary.detail
 
 import android.content.Context
 import android.content.Intent
+import android.support.annotation.IntDef
 import android.view.View
 import com.dnsfrolov.pocketdictionary.R
 import com.dnsfrolov.pocketdictionary.data.model.Word
@@ -18,18 +19,34 @@ import kotlinx.android.synthetic.main.activity_dictionary_detail.*
  * email: denis.frolov.work@gmail.com
  */
 
-fun Context.dictionaryDetailIntent(wordId: Int): Intent {
-	return Intent(this, DictionaryDetailActivity::class.java).apply {
-		putExtra(Key.WORD_ID, wordId)
-	}
-}
-
 class DictionaryDetailActivity :
 		BaseMvpActivity<DictionaryDetailContract.View, DictionaryDetailPresenterImpl>(),
 		DictionaryDetailContract.View,
 		View.OnClickListener {
 
+	companion object {
+		@IntDef(CREATE, UPDATE)
+		@Retention(AnnotationRetention.SOURCE)
+		annotation class Intention
+
+		const val CREATE = 0L
+		const val UPDATE = 1L
+
+		fun newIntent(context: Context, @Intention intention: Long, wordId: Int = 0): Intent = Intent(
+				context, DictionaryDetailActivity::class.java).apply {
+			putExtra(Key.INTENTION, intention)
+			putExtra(Key.WORD_ID, wordId)
+		}
+	}
+
+	@Intention
+	private var type: Long = 0
 	private lateinit var adapter: WordExampleListAdapter
+
+	override fun interceptTransaction() {
+		super.interceptTransaction()
+		type = intent.getLongExtra(Key.INTENTION, 0)
+	}
 
 	override fun getContentView(): Int {
 		return R.layout.activity_dictionary_detail
@@ -49,7 +66,7 @@ class DictionaryDetailActivity :
 	}
 
 	override fun configurePresenter() {
-		presenter.getWordDetails()
+		if (type == UPDATE) presenter.getWordDetails(intent.getIntExtra(Key.WORD_ID, 0))
 	}
 
 	override fun showWordDetails(word: Word?) {
@@ -70,9 +87,10 @@ class DictionaryDetailActivity :
 	}
 
 	private fun validateFields() {
-		if (!etxt_dictionary_detail_transcription?.text.isNullOrEmpty())
+		if (!etxt_dictionary_detail_transcription?.text.isNullOrEmpty()) {
 			fl_dictionary_detail_transcription?.visibility = View.VISIBLE
-		else
+		} else {
 			fl_dictionary_detail_transcription?.visibility = View.GONE
+		}
 	}
 }

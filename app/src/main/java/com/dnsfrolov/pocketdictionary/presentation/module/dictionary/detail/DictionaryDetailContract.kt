@@ -18,6 +18,6 @@ interface DictionaryDetailContract {
 
 	interface Presenter : BaseMvpContract.Presenter<View> {
 
-		fun getWordDetails()
+		fun getWordDetails(wordId: Int)
 	}
 }

@@ -8,5 +8,6 @@ package com.dnsfrolov.pocketdictionary.util
  */
 
 object Key {
+	const val INTENTION = "intention"
 	const val WORD_ID = "word_id"
 }

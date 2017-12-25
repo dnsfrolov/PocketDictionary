@@ -28,12 +28,16 @@ abstract class BaseMvpActivity<in V : BaseMvpContract.View, P : BaseMvpContract.
 
 	protected open fun configureToolbar(toolbar: ToolbarLayout) {}
 
+	open protected fun interceptTransaction() {
+	}
+
 	open protected fun configureUI() {}
 
 	open protected fun configurePresenter() {}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		interceptTransaction()
 		setContentView(getContentView())
 
 		presenter = providePresenter()
