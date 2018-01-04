@@ -1,5 +1,7 @@
 package com.dnsfrolov.pocketdictionary.data.model
 
+import io.realm.RealmModel
+
 /**
  * project: PocketDictionary
  * date: 05.12.2017
@@ -10,4 +12,4 @@ class Word(val id: Int,
 		   val word: String,
 		   val transcription: String?,
 		   val translation: String,
-		   val examples: List<WordExample>?)
+		   val examples: List<WordExample>?) : RealmModel
